@@ -3,6 +3,7 @@ package com.clay.OA.controller;
 import com.clay.OA.entity.SingleResult;
 import com.clay.OA.enums.CheckStatus;
 import com.clay.OA.enums.HttpStatus;
+import com.clay.OA.servIce.UserService;
 import com.clay.OA.util.MD5Utils;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.annotation.Resource;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -31,6 +33,9 @@ import java.util.Map;
 public class UserController {
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
+
+    @Resource
+    private UserService userService;
 
     @GetMapping(value = "/getUserInfo")
     @ApiOperation(value = "根据id查询商品", notes = "查询数据库中某个的商品信息")

@@ -22,7 +22,6 @@ public class GlExceptionHandler {
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
-
     /**
     * @Description: 处理  MissingServletRequestParameterException
     * @Param: [e, request]
