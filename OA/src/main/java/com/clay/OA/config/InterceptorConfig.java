@@ -13,14 +13,14 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
  **/
 @Configuration
 public class InterceptorConfig implements WebMvcConfigurer {
-    
+
     /**
-    * @Description: 注册自定义拦截器
-    * @Param: [registry]
-    * @return: void
-    * @Author: bob
-    * @Date: 2021/1/29
-    */
+     * @Description: 注册自定义拦截器
+     * @Param: [registry]
+     * @return: void
+     * @Author: bob
+     * @Date: 2021/1/29
+     */
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(new LoginHandler()).addPathPatterns("/user/getUserInfo");

@@ -10,7 +10,7 @@ import io.swagger.annotations.ApiModelProperty;
  * @create: 2021-01-29 14:42
  **/
 @ApiModel("单条记录返回")
-public class SingleResult<T>{
+public class SingleResult<T> {
 
     @ApiModelProperty("返回状态码 正常情况为200 错误情况返回枚举code")
     public int code;

@@ -24,7 +24,7 @@ public class CrossFilter implements Filter {
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         logger.info(" CrossFilter doFilter 请求");
-        filterChain.doFilter(servletRequest,servletResponse);
+        filterChain.doFilter(servletRequest, servletResponse);
         logger.info(" CrossFilter doFilter 相应");
     }
 

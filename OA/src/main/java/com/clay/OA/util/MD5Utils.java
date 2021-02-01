@@ -17,25 +17,25 @@ public class MD5Utils {
     private static final String salt = "clayclay";
 
     /**
-    * @Description: MD5加密
-    * @Param: [src]
-    * @return: java.lang.String
-    * @Author: bob
-    * @Date: 2021/1/29
-    */
+     * @Description: MD5加密
+     * @Param: [src]
+     * @return: java.lang.String
+     * @Author: bob
+     * @Date: 2021/1/29
+     */
     public static String md5(String password) {
-        return DigestUtils.md5DigestAsHex (password.getBytes());
+        return DigestUtils.md5DigestAsHex(password.getBytes());
     }
 
     /**
-    * @Description: 对穿入的代码先加盐在MD5加密
-    * @Param: [inputPass]
-    * @return: java.lang.String
-    * @Author: bob
-    * @Date: 2021/1/29
-    */
+     * @Description: 对穿入的代码先加盐在MD5加密
+     * @Param: [inputPass]
+     * @return: java.lang.String
+     * @Author: bob
+     * @Date: 2021/1/29
+     */
     public static String getMD5Password(String password) {
-        String str = salt.charAt(0)+salt.charAt(2) + password +salt.charAt(5) + salt.charAt(4);
+        String str = salt.charAt(0) + salt.charAt(2) + password + salt.charAt(5) + salt.charAt(4);
         return md5(str);
     }
 }

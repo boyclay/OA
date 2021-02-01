@@ -8,7 +8,7 @@ package com.clay.OA.enums;
  **/
 public enum HttpStatus {
 
-    SUCCESS(200,"SUCCESS");
+    SUCCESS(200, "SUCCESS");
 
     private int code;
 

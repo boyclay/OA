@@ -2,8 +2,8 @@ package com.clay.OA.servIce.impl;
 
 import com.clay.OA.mapper.UserMapper;
 import com.clay.OA.servIce.UserService;
-
-import javax.annotation.Resource;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 /**
  * @program: OA
@@ -11,9 +11,10 @@ import javax.annotation.Resource;
  * @author: bob
  * @create: 2021-01-30 10:26
  **/
-public class UserServiceImpl  implements UserService {
+@Service
+public class UserServiceImpl implements UserService {
 
-    @Resource
+    @Autowired
     private UserMapper userMapper;
 
 }

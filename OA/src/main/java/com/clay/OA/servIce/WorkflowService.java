@@ -4,10 +4,10 @@ import org.springframework.stereotype.Service;
 
 /**
  * @program: OA
- * @description: 用户管理业务层
+ * @description: 工作流引擎业务层
  * @author: bob
- * @create: 2021-01-30 10:25
+ * @create: 2021-02-01 15:57
  **/
 @Service
-public interface UserService {
+public interface WorkflowService {
 }

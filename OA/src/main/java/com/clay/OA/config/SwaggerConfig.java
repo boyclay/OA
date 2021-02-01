@@ -23,17 +23,17 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @Configuration
 @EnableSwagger2
 //@Profile({"dev","test"})
-@ConditionalOnProperty(prefix = "swagger",value = {"enable"},havingValue = "true")
+@ConditionalOnProperty(prefix = "swagger", value = {"enable"}, havingValue = "true")
 //@Value() 通过设置enable
 public class SwaggerConfig {
 
     /**
-    * @Description: swaager 初始化
-    * @Param: []
-    * @return: springfox.documentation.spring.web.plugins.Docket
-    * @Author: bob
-    * @Date: 2021/1/29
-    */
+     * @Description: swaager 初始化
+     * @Param: []
+     * @return: springfox.documentation.spring.web.plugins.Docket
+     * @Author: bob
+     * @Date: 2021/1/29
+     */
     @Bean
     public Docket createRestApi() {
         return new Docket(DocumentationType.SWAGGER_2)
@@ -44,19 +44,19 @@ public class SwaggerConfig {
                 .build();
     }
 
-   /**
-   * @Description: 
-   * @Param: []
-   * @return: springfox.documentation.service.ApiInfo
-   * @Author: bob
-   * @Date: 2021/1/29
-   */
+    /**
+     * @Description:
+     * @Param: []
+     * @return: springfox.documentation.service.ApiInfo
+     * @Author: bob
+     * @Date: 2021/1/29
+     */
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
                 // 页面标题
                 .title("OA Swagger2 构建RESTful API")
                 // 创建人信息
-                .contact(new Contact("bob",  "http://localhost:8077/swagger-ui.html",  "2628894322@qq.com"))
+                .contact(new Contact("bob", "http://localhost:8077/swagger-ui.html", "2628894322@qq.com"))
                 // 版本号
                 .version("1.0")
                 // 描述

@@ -12,12 +12,12 @@ import io.swagger.annotations.ApiOperation;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.annotation.Resource;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -34,7 +34,7 @@ public class UserController {
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    @Resource
+    @Autowired
     private UserService userService;
 
     @GetMapping(value = "/getUserInfo")
@@ -42,7 +42,7 @@ public class UserController {
     @ApiImplicitParams({@ApiImplicitParam(name = "userName", value = "用户姓名", paramType = "query", required = true, dataType = "String"), @ApiImplicitParam(name = "password", value = "密码", paramType = "query", required = true, dataType = "String")})
     public SingleResult getUserInfo(@RequestParam String userName, @RequestParam String password) {
         SingleResult singleResult = new SingleResult();
-        if(StringUtils.isBlank(userName)||StringUtils.isBlank(password)){
+        if (StringUtils.isBlank(userName) || StringUtils.isBlank(password)) {
             singleResult.setCode(CheckStatus.userInfoEmpty.getCode());
             singleResult.setMessage(CheckStatus.userInfoEmpty.getMessage());
             return singleResult;

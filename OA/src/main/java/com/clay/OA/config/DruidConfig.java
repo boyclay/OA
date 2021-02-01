@@ -25,17 +25,17 @@ public class DruidConfig {
 
     @ConfigurationProperties(prefix = "spring.datasource")
     @Bean
-    public DataSource dataSource(){
+    public DataSource dataSource() {
         return new DruidDataSource();
     }
 
     /**
-    * @Description: 设置黑白名单
-    * @Param: []
-    * @return: org.springframework.boot.web.servlet.ServletRegistrationBean
-    * @Author: bob
-    * @Date: 2021/1/30
-    */
+     * @Description: 设置黑白名单
+     * @Param: []
+     * @return: org.springframework.boot.web.servlet.ServletRegistrationBean
+     * @Author: bob
+     * @Date: 2021/1/30
+     */
     @Bean
     public ServletRegistrationBean servletRegistrationBean() {
         ServletRegistrationBean<StatViewServlet> bean = new ServletRegistrationBean<>(new StatViewServlet(), "/druid/*");
@@ -52,12 +52,12 @@ public class DruidConfig {
     }
 
     /**
-    * @Description: 过滤filter
-    * @Param: []
-    * @return: org.springframework.boot.web.servlet.FilterRegistrationBean
-    * @Author: bob
-    * @Date: 2021/1/30
-    */
+     * @Description: 过滤filter
+     * @Param: []
+     * @return: org.springframework.boot.web.servlet.FilterRegistrationBean
+     * @Author: bob
+     * @Date: 2021/1/30
+     */
     @Bean
     public FilterRegistrationBean filterRegistrationBean() {
         FilterRegistrationBean<WebStatFilter> bean = new FilterRegistrationBean<>();

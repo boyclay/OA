@@ -8,11 +8,11 @@ import java.io.Serializable;
  * @author: bob
  * @create: 2021-01-29 14:35
  **/
-public class User  implements Serializable {
+public class User implements Serializable {
 
-    private  String userName;
+    private String userName;
 
-    private  String password;
+    private String password;
 
     public String getPassword() {
         return password;

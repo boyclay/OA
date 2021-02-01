@@ -8,7 +8,7 @@ package com.clay.OA.enums;
  **/
 public enum CheckStatus {
 
-    userInfoEmpty(100001,"userInfo is Empty");
+    userInfoEmpty(100001, "userInfo is Empty");
 
     private int code;
 

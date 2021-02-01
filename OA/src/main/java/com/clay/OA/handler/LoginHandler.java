@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author: bob
  * @create: 2021-01-29 16:37
  **/
-public class LoginHandler  implements HandlerInterceptor {
+public class LoginHandler implements HandlerInterceptor {
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
     private String password;
@@ -24,9 +24,9 @@ public class LoginHandler  implements HandlerInterceptor {
             throws Exception {
         String username = request.getParameter("userName");
         String password = request.getParameter("password");
-        logger.info("userName:"+username,"password"+password);
+        logger.info("userName:" + username, "password" + password);
         return true;
-       
+
     }
 
     @Override

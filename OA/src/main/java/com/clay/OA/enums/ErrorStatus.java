@@ -8,11 +8,11 @@ package com.clay.OA.enums;
  **/
 public enum ErrorStatus {
 
-    MissingServletRequestParameterException(200001,"MissingServletRequestParameterException"),
-    NullPointerException(200002,"NullPointerException"),
+    MissingServletRequestParameterException(200001, "MissingServletRequestParameterException"),
+    NullPointerException(200002, "NullPointerException"),
     ClassNotFoundException(200003, "ClassNotFoundException"),
     SQLException(200004, "SQLException"),
-    ;
+    FileNotFoundException(200005, "FileNotFoundException");
 
     private int code;
 

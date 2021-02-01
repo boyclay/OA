@@ -19,13 +19,13 @@ public class FilterConfig {
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
-   /**
-   * @Description: 注册 AuthorityFilter 过滤器
-   * @Param: []
-   * @return: org.springframework.boot.web.servlet.FilterRegistrationBean
-   * @Author: bob
-   * @Date: 2021/1/29
-   */
+    /**
+     * @Description: 注册 AuthorityFilter 过滤器
+     * @Param: []
+     * @return: org.springframework.boot.web.servlet.FilterRegistrationBean
+     * @Author: bob
+     * @Date: 2021/1/29
+     */
     @Bean
     public FilterRegistrationBean authorityFilter() {
         FilterRegistrationBean filterRegistrationBean = new FilterRegistrationBean();

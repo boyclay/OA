@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import javax.servlet.http.HttpServletRequest;
+import java.io.FileNotFoundException;
 import java.sql.SQLException;
 
 /**
@@ -23,12 +24,12 @@ public class GlExceptionHandler {
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     /**
-    * @Description: 处理  MissingServletRequestParameterException
-    * @Param: [e, request]
-    * @return: com.clay.OA.entity.SingleResult<java.lang.Object>
-    * @Author: bob
-    * @Date: 2021/1/29
-    */
+     * @Description: 处理  MissingServletRequestParameterException
+     * @Param: [e, request]
+     * @return: com.clay.OA.entity.SingleResult<java.lang.Object>
+     * @Author: bob
+     * @Date: 2021/1/29
+     */
     @ExceptionHandler(value = MissingServletRequestParameterException.class)
     SingleResult<Object> handleMissingServletRequestParameterException(Exception e, HttpServletRequest request) {
         SingleResult<Object> exception = new SingleResult<Object>();
@@ -39,12 +40,12 @@ public class GlExceptionHandler {
     }
 
     /**
-    * @Description: 处理 NullPointerException
-    * @Param: [e, request]
-    * @return: com.clay.OA.entity.SingleResult<java.lang.Object>
-    * @Author: bob
-    * @Date: 2021/1/29
-    */
+     * @Description: 处理 NullPointerException
+     * @Param: [e, request]
+     * @return: com.clay.OA.entity.SingleResult<java.lang.Object>
+     * @Author: bob
+     * @Date: 2021/1/29
+     */
     @ExceptionHandler(value = NullPointerException.class)
     SingleResult<Object> handleNullPointerException(Exception e, HttpServletRequest request) {
         SingleResult<Object> exception = new SingleResult<Object>();
@@ -55,12 +56,12 @@ public class GlExceptionHandler {
     }
 
     /**
-    * @Description: 处理 ClassNotFoundException
-    * @Param: [e, request]
-    * @return: com.clay.OA.entity.SingleResult<java.lang.Object>
-    * @Author: bob
-    * @Date: 2021/1/29
-    */
+     * @Description: 处理 ClassNotFoundException
+     * @Param: [e, request]
+     * @return: com.clay.OA.entity.SingleResult<java.lang.Object>
+     * @Author: bob
+     * @Date: 2021/1/29
+     */
     @ExceptionHandler(value = ClassNotFoundException.class)
     SingleResult<Object> handleClassNotFoundException(Exception e, HttpServletRequest request) {
         SingleResult<Object> exception = new SingleResult<Object>();
@@ -83,6 +84,22 @@ public class GlExceptionHandler {
         exception.setCode(ErrorStatus.SQLException.getCode());
         exception.setMessage(ErrorStatus.SQLException.getMessage());
         logger.error("SQLException", "Error found: ", e);
+        return exception;
+    }
+
+    /**
+     * @Description: 处理 FileNotFoundException
+     * @Param: [e, request]
+     * @return: com.clay.OA.entity.SingleResult<java.lang.Object>
+     * @Author: bob
+     * @Date: 2021/1/29
+     */
+    @ExceptionHandler(value = FileNotFoundException.class)
+    SingleResult<Object> handleFileNotFoundException(Exception e, HttpServletRequest request) {
+        SingleResult<Object> exception = new SingleResult<Object>();
+        exception.setCode(ErrorStatus.FileNotFoundException.getCode());
+        exception.setMessage(ErrorStatus.FileNotFoundException.getMessage());
+        logger.error("FileNotFoundException", "Error found: ", e);
         return exception;
     }
 }

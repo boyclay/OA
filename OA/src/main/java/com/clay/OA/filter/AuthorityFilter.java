@@ -24,7 +24,7 @@ public class AuthorityFilter implements Filter {
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         logger.info(" AuthorityFilter doFilter 请求");
-        filterChain.doFilter(servletRequest,servletResponse);
+        filterChain.doFilter(servletRequest, servletResponse);
         logger.info(" AuthorityFilter doFilter 相应");
     }
 
